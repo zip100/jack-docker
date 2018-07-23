@@ -11,7 +11,7 @@ services:
 
   mysql:
     restart: always
-    image: mysql
+    image: sameersbn/mysql
     volumes:
         - ./mysql/data:/var/lib/mysql
     ports:
@@ -35,7 +35,7 @@ services:
     environment:
         - DEBUG=false
 
-        - DB_ADAPTER=mysql2
+        - DB_TYPE=mysql
         - DB_HOST=mysql
         - DB_PORT=3306
         - DB_USER=root
