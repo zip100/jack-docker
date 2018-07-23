@@ -35,7 +35,7 @@ services:
     environment:
         - DEBUG=false
 
-        - DB_ADAPTER=mysql
+        - DB_ADAPTER=mysql2
         - DB_HOST=mysql
         - DB_PORT=3306
         - DB_USER=root
