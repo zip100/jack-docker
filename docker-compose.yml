@@ -4,8 +4,9 @@ services:
   nginx:
     image: nginx
     container_name: nginx
+    restart: always
     ports:
-      - "833:80"
+      - "60000:80"
     depends_on: 
       - redis
     volumes:
@@ -17,6 +18,20 @@ services:
 
   redis:
     image: redis
+    container_name: redis
+    restart: always
     ports:
       - "6379:6379"
-    container_name: redis
+
+  gitlab:
+    image: gitlab/gitlab-ce
+    container_name: gitlab
+    restart: always
+    ports:
+      - "60001:80"
+      - "60002:22"
+      - "60003:443"
+    volumes:
+      - ./gitlab/conf:/etc/gitlab
+      - ./gitlab/data:/var/opt/gitlab
+      - ./gitlab/logs:/var/log/gitlab
