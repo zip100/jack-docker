@@ -40,7 +40,7 @@ services:
         - DB_PORT=3306
         - DB_USER=root
         - DB_PASS=as965687
-        - DB_NAME=gitlabhq_production
+        - DB_NAME=gitlab
 
         - REDIS_HOST=redis
         - REDIS_PORT=6379
