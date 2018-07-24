@@ -42,7 +42,7 @@ services:
         - DB_TYPE=mysql
         - DB_HOST=mysql
         - DB_PORT=3306
-        - DB_USER=root
+        - DB_USER=jack
         - DB_PASS=as965687
         - DB_NAME=gitlab
 
