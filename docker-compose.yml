@@ -11,7 +11,7 @@ services:
 
   mysql:
     restart: always
-    image: mysql/mysql-server:5.7
+    image: sameersbn/mysql:5.7.22-1
     volumes:
         - ./mysql/data:/var/lib/mysql
         - ./mysql/conf/my.cnf:/etc/my.cnf
@@ -39,8 +39,8 @@ services:
     environment:
         - DEBUG=false
 
-        - DB_TYPE=mysql
-        - DB_HOST=mysql
+        - DB_ADAPTER=mysql2
+        - DB_HOST=192.168.199.249
         - DB_PORT=3306
         - DB_USER=jack
         - DB_PASS=as965687
