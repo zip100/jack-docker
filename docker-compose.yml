@@ -19,9 +19,9 @@ services:
     ports:
         - "3306:3306"
     environment:
-        DB_NAME: gitlab
-        DB_USER: root
-        DB_PASS: as965687
+        DB_NAME: ${DB_NAME}
+        DB_USER: ${DB_USER}
+        DB_PASS: ${DB_PASS}
 
   gitlab:
     restart: always
@@ -40,11 +40,11 @@ services:
         - DEBUG=false
 
         - DB_ADAPTER=mysql2
-        - DB_HOST=192.168.199.249
+        - DB_HOST=mysql
         - DB_PORT=3306
-        - DB_USER=root
-        - DB_PASS=as965687
-        - DB_NAME=gitlab
+        - DB_USER=${DB_USER}
+        - DB_PASS=${DB_PASS}
+        - DB_NAME=${DB_NAME}
 
         - REDIS_HOST=redis
         - REDIS_PORT=6379
@@ -63,8 +63,8 @@ services:
         - GITLAB_SECRETS_SECRET_KEY_BASE=long-and-random-alphanumeric-string
         - GITLAB_SECRETS_OTP_KEY_BASE=long-and-random-alphanumeric-string
 
-        - GITLAB_ROOT_PASSWORD=
-        - GITLAB_ROOT_EMAIL=
+        - GITLAB_ROOT_PASSWORD=${GITLAB_ROOT_PASSWORD}
+        - GITLAB_ROOT_EMAIL=${GITLAB_ROOT_EMAIL}
 
         - GITLAB_NOTIFY_ON_BROKEN_BUILDS=true
         - GITLAB_NOTIFY_PUSHER=false
