@@ -21,8 +21,7 @@ services:
     environment:
         DB_NAME: gitlab
         DB_USER: root
-        MYSQL_PASSWORD: as965687
-        MYSQL_ROOT_PASSWORD: as965687
+        DB_PASS: as965687
 
   gitlab:
     restart: always
@@ -43,7 +42,7 @@ services:
         - DB_ADAPTER=mysql2
         - DB_HOST=192.168.199.249
         - DB_PORT=3306
-        - DB_USER=jack
+        - DB_USER=root
         - DB_PASS=as965687
         - DB_NAME=gitlab
 
