@@ -19,7 +19,8 @@ services:
     ports:
         - "3306:3306"
     environment:
-        MYSQL_USER: root
+        DB_NAME: gitlab
+        DB_USER: root
         MYSQL_PASSWORD: as965687
         MYSQL_ROOT_PASSWORD: as965687
 
