@@ -34,6 +34,8 @@ services:
         - "10022:22"
     volumes:
         - ./gitlab/data:/home/git/data:Z
+        - ./gitlab/conf:/etc/gitlab \
+        - ./gitlab/logs:/var/log/gitlab \
     environment:
         - DEBUG=false
 
