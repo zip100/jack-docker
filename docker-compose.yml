@@ -11,7 +11,7 @@ services:
 
   mysql:
     restart: always
-    image: sameersbn/mysql
+    image: mysql/mysql-server:5.7
     volumes:
         - ./mysql/data:/var/lib/mysql
         - ./mysql/conf/my.cnf:/etc/my.cnf
